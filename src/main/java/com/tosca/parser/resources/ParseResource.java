@@ -2,6 +2,7 @@ package com.tosca.parser.resources;
 
 
 import com.tosca.parser.dto.response.TestDTO;
+import com.tosca.parser.dto.response.ToscasTestCaseDTO;
 import com.tosca.parser.dto.response.testsuite.TestSuiteDTO;
 import com.tosca.parser.service.ParserService;
 import com.tosca.parser.service.TestSuiteService;
@@ -36,9 +37,17 @@ public class ParseResource {
         return new ResponseEntity<List<TestSuiteDTO>>(testSuiteService.index(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/testsuites2", produces = "application/json; charset=UTF-8")
+    public ResponseEntity<List<ToscasTestCaseDTO>> index2(){
+        return new ResponseEntity<List<ToscasTestCaseDTO>>(testSuiteService.index2(), HttpStatus.OK);
+    }
+
+
     @GetMapping(value = "/testsuites/archived", produces = "application/json; charset=UTF-8")
     public ResponseEntity<List<TestSuiteDTO>> archived(){
         return new ResponseEntity<List<TestSuiteDTO>>(testSuiteService.archived(), HttpStatus.OK);
     }
+
+
 
 }

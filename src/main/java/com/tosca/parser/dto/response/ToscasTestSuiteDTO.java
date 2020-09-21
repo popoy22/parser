@@ -9,8 +9,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class TestDTO {
+public class ToscasTestSuiteDTO {
     private Long id;
-    private String name;
-    private List<TestResultDTO> results;
+    private Long case_id;
 }
